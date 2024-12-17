@@ -1,0 +1,138 @@
+﻿
+.side-navbar {
+    position: fixed;
+    top: 35%;
+    right: 15px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 15px;
+    background: #212529;
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    z-index: 999;
+    opacity: 0;
+    animation: slideLeftFade 0.7s ease-out forwards;
+}
+
+@keyframes slideLeftFade {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(33, 37, 41, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover {
+    transform: translateX(-10px) scale(1.05);
+    background: #212529;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item img {
+    width: 34px;
+    height: 34px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover img {
+    transform: scale(1.2);
+}
+
+.tooltip {
+    position: absolute;
+    right: 75px;
+    background: #212529;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 6px solid #333;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+.nav-item:hover .tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+}
+
+.active-indicator {
+    position: absolute;
+    right: -5px;
+    width: 12px;
+    height: 12px;
+    background: #4CAF50;
+    border-radius: 50%;
+    border: 2px solid white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-item.active .active-indicator {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .side-navbar {
+        right: 20px;
+        padding: 20px 10px;
+    }
+
+    .nav-item {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-item img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
