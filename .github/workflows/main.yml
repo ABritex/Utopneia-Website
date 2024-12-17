@@ -4,7 +4,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ master ]
-
+permissions:
+  contents: write
 jobs:
   deploy-to-github-pages:
     # Use ubuntu-latest image to run steps on
@@ -12,10 +13,8 @@ jobs:
 
     steps:
       # Checkout code from the master branch
-    - uses: actions/checkout@v2
-      with:
-          lfs: true
-          token: ${{ secrets.ACCESS_TOKEN }}
+    - name: Check out this repo
+      uses: actions/checkout@v2
     # Configure Git (if necessary)
     - name: Configure Git
       run: |
