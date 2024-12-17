@@ -17,7 +17,7 @@ jobs:
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x'  # Corrected version format
+        dotnet-version: '8.0.x'  # Updated to support .NET 8.0 SDK
 
     - name: Publish .NET Core Project
       run: dotnet publish Sanctum -c Release -o release --nologo
