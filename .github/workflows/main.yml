@@ -1,25 +1,27 @@
 name: Deploy to GitHub Pages
+
 # Run workflow on every push to the master branch
 on:
   push:
     branches: [ master ]
-    
+
 jobs:
   deploy-to-github-pages:
-    # use ubuntu-latest image to run steps on
+    # Use ubuntu-latest image to run steps on
     runs-on: ubuntu-latest
+
     steps:
-        # uses GitHub's checkout action to checkout code form the master branch
+      # Uses GitHub's checkout action to checkout code from the master branch
     - uses: actions/checkout@v2
 
-    - name: Setup .NET Core SDK
+    - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1
+        dotnet-version: 6.0  # Update this to match your target framework
+
     - name: Publish .NET Core Project
-      run: dotnet publish Sanctum  -c Release -o release --nologo
-    - name: Publish .NET Core Project
-      run: dotnet publish Sanctum   -c Release -o release --nologo
+      run: dotnet publish Sanctum -c Release -o release --nologo
+
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
