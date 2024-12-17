@@ -11,13 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Uses GitHub's checkout action to checkout code from the master branch
+      # Checkout code from the master branch
     - uses: actions/checkout@v2
+
+    # Configure Git (if necessary)
+    - name: Configure Git
+      run: |
+        git config --global user.name "ABritex"
+        git config --global user.email "aprelox@gmail.com"
 
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.0.x'  # Updated to support .NET 8.0 SDK
+        dotnet-version: '8.0.x'
 
     - name: Publish .NET Core Project
       run: dotnet publish Sanctum -c Release -o release --nologo
