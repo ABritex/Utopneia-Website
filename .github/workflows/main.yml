@@ -17,9 +17,9 @@ jobs:
       with:
         dotnet-version: 3.1
     - name: Publish .NET Core Project
-      run: dotnet publish BlazorGitHubPagesDemo.csproj -c Release -o release --nologo
+      run: dotnet publish Sanctum  -c Release -o release --nologo
     - name: Publish .NET Core Project
-      run: dotnet publish BlazorGitHubPagesDemo.csproj -c Release -o release --nologo
+      run: dotnet publish Sanctum   -c Release -o release --nologo
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
