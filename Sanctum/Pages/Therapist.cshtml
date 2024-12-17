@@ -1,0 +1,162 @@
+﻿@page
+@model Sanctum.Pages.TherapistModel
+@{
+    var theRapist = "/images/ppl/rei.png";
+    var firstTheRapist = "/images/therapist/firstrapist.png";
+    var secondTheRapist = "/images/therapist/secondrapist.png";
+    var thirdTheRapist = "/images/therapist/firstrapist.png";
+    var fourthTheRapist = "/images/therapist/firstrapist.png";
+
+    var therapists = new[]
+          {
+        new { Name = "Prof. Junnevy Millora", Image = firstTheRapist, Profession = "Clinical Psychologist", Experience = "2 Years", Country = "Philippines", Description = "As a psychologist who is passionate about my purpose, I am dedicated to assisting individuals seeking healing to achieve balanced well-being. I engage with my clients fully, bringing empathy and a profound understanding of their unique stories and challenges." },
+        new { Name = "Jerryl Lofamia", Image = secondTheRapist, Profession = "Counselor", Experience = "5 Years", Country = "Philippines", Description = "Hello. I am Ms. Jerryl. I am a Registered Guidance Counselor. I look forward to meeting you and hopefully we can journey together for better days. I'm passionate with reading and learning new things. I feel happy when my clients also share their passion and goals with me. I love watching historical Korean dramas and I enjoy pop rock music most of the times." },
+        new { Name = "Jesicar Canlas", Image = thirdTheRapist, Profession = "Counselor", Experience = "6 Years", Country = "Philippines", Description = "As a Registered Guidance Counselor with a Bachelor’s degree in Psychology from the University of Santo Tomas and a Master of Arts in Education, specializing in Guidance and Counseling from FEU Roosevelt Cainta, I bring 14 years of dedicated experience to my practice. My passion lies in nurturing the well- being and personal growth of individuals across all stages of life." }
+
+    };
+
+}
+
+<div class="therapist container py-5" style="margin-top: 3rem;">
+    <section class="mb-5 bg-light rounded shadow p-4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="row align-items-start" >
+
+            <div class="col-lg-8" >
+                <h2 class="mb-4" style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;">Therapist</h2>
+                <h3 class="h5 mb-3 text-secondary">
+                    The Therapists page is designed to make mental health care more accessible by connecting individuals with qualified, licensed therapists. Its primary focus is to create a seamless and supportive experience for those seeking professional help, offering an easy way to find the right therapist based on personal needs, preferences, and concerns. The page aims to bridge the gap between individuals and the mental health resources they require, ensuring that help is just a few clicks away.
+                </h3>
+              
+               
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none">Clinical Psychologist Jobs</a></li>
+                            <li><a href="#" class="text-decoration-none">Family Therapist Jobs</a></li>
+                            <li><a href="#" class="text-decoration-none">School Counselor Jobs</a></li>
+                            <li><a href="#" class="text-decoration-none">Substance Abuse Counselor Jobs</a></li>
+                            <li><a href="#" class="text-decoration-none">Grief Counselor Jobs</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none">Psychiatrist Jobs</a></li>
+                            <li><a href="#" class="text-decoration-none">Child Psychiatrist Jobs</a></li>
+                            <li><a href="#" class="text-decoration-none">Psychiatric Nurse Jobs</a></li>
+                            <li><a href="#" class="text-decoration-none">Addiction Psychiatrist Jobs</a></li>
+                            <li><a href="#" class="text-decoration-none">Neuropsychiatrist Jobs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <img src="@theRapist" alt="Nursing Jobs" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="mb-5" >
+        <div class="row">
+            <div class="col-lg-7 mb-4 rounded" data-aos="fade-up" data-aos-duration="1300">
+                <div class="card h-100 p-4 shadow">
+                    <h3 style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;">Mission</h3>
+                    The mission of this feature is to remove common barriers to therapy, such as uncertainty about where to find a professional or how to begin the process. By providing a secure, user-friendly platform, users can explore a range of licensed therapists who specialize in various areas of mental health. This allows individuals to select the right fit for their situation, whether it be for short-term guidance or ongoing therapy.                   
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-5 mb-4" data-aos="fade-up" data-aos-duration="1600">
+                <div class="card h-100 p-4 shadow">
+                    <h3 style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;">Primary Goal</h3>
+                    The platform aims to create an environment where individuals feel empowered to prioritize their mental health and seek support confidently. By simplifying access to therapy, it fosters a community where seeking help is a positive step toward well-being, connecting users with therapists who can offer guidance and support.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="mb-4" style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;" data-aos="fade-up" data-aos-duration="1000">Available Therapists</h2>
+        <div class="row">
+            @for (int i = 0; i < therapists.Length; i++)
+            {
+                var therapist = therapists[i];
+                var delay = i * 200; 
+
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="@delay">
+                    <div class="card h-100 text-center">
+                        <img src="@therapist.Image" class="rounded-circle mx-auto mt-3" alt="@therapist.Name" style="width: 120px; height: 120px; object-fit: cover;">
+                        <div class="card-body">
+                            <h4 class="card-title">@therapist.Name</h4>
+                            <div class="d-flex justify-content-center align-items-center mb-3 flex-wrap">
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bi bi-briefcase me-2"></i>
+                                    <span>@therapist.Profession</span>
+                                </div>
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bi bi-clock me-2"></i>
+                                    <span>@therapist.Experience</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-geo-alt me-2"></i>
+                                    <span>@therapist.Country</span>
+                                </div>
+                            </div>
+                            <hr />
+                            <p class="card-text">
+                                @therapist.Description
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+
+    <!-- Articles and Vacancy Section -->
+    <section>
+        <div class="row">
+            <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                <h2 style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;">Support & Chat Services</h2>
+                <p>If you are struggling or you know someone who is experiencing a severe crisis, you are not alone..</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="tel:+1234567890" class="text-decoration-none">Hotline: +64-966-351-4518 </a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none">Chat Service: Chat with us online</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none">Email Support: prayforme@cbnasia.org</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none">Crisis Line: +64-917-800-1123</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-9" data-aos="fade-up" data-aos-duration="1200">
+                <h2 style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;">Position Available: Therapist</h2>
+                <div class="card p-4">
+                    <h4 class="mb-4">Therapist needed for our growing team</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <p><strong>Career Level:</strong><br>Experienced Licensed Therapist</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <p><strong>Job Location:</strong><br>Alabama (Remote or On-site)</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <p><strong>Working Hours:</strong><br>Full Time, Part Time, Flexible Hours</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <p><strong>Salary:</strong><br>$27.66 - $46.46 per hour</p>
+                        </div>
+                        <div class="col-12">
+                            <p><strong>Job Summary:</strong><br>We are seeking a compassionate and skilled therapist to join our team. The role involves providing therapeutic support to clients through individual and group sessions, developing personalized treatment plans, and collaborating with other healthcare professionals. Experience in dealing with various mental health conditions and commitment to client care is essential.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

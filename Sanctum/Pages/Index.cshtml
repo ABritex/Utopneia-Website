@@ -1,0 +1,87 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var elysiaIconUrl = ViewData["ElysiaIconUrl"] as string;
+    var firstIcon = "images/icons/1companion.png";
+    var secondIcon = "images/icons/zoomglass.png";
+    var thirdIcon = "images/icons/brain.png";
+    var fourthIcon = "images/icons/scaler2.png";
+    var titleMain = "images/utopneia2.png";
+
+    var listItems = new[]
+    {
+        new { Icon = firstIcon, Alt = "Mental Wellness Icon", Title = "Your Mental Wellness Companion", Description = "Utopneia offers tools, therapy, and AI support for emotional balance." },
+        new { Icon = secondIcon, Alt = "Mental Utopia Icon", Title = "Find Your Mental Utopia", Description = "Discover peace through guided meditations and expert advice." },
+        new { Icon = thirdIcon, Alt = "Mind Support Icon", Title = "Support for Your Mind", Description = "Utopneia provides therapy, self-help tools, and AI-guided care." },
+        new { Icon = fourthIcon, Alt = "Harmony Icon", Title = "Your Path to Harmony", Description = "Achieve balance with Utopneia’s mental health resources and Elysia." }
+    };
+}
+
+
+<div class="main-container">
+    <div class="main-title">
+        <img src="@titleMain" alt="UTOPNEIA" class="glow-image" />
+    </div>
+</div>
+
+
+<div class="d-flex flex-column vh-100">
+    <div class="flex-grow-1 d-flex align-items-center">
+        <div>
+            <p class="display-1 title mb-0 text-start" style="font-family: 'Beba', Arial, sans-serif; line-height: 0.9; font-size: 10rem;" data-aos="fade-up" data-aos-duration="1000">
+                <span id="typed-text"></span>
+            </p>
+        </div>
+    </div>
+    
+    <div class=" mb-5 text-start">
+        <p class="description" style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;" data-aos="fade-up" data-aos-duration="1500">
+            Utopneia is a mental health support platform designed to guide users <br /> toward inner peace and emotional well-being.
+        </p>
+    </div>
+</div>
+
+ <div class="d-flex flex-column"> 
+     <div class="my-5"></div> 
+     <div class="my-5"></div> 
+ </div> 
+
+<div class="d-flex vh-100 align-items-center justify-content-center">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            @for (int i = 0; i < listItems.Length; i++)
+            {
+                var item = listItems[i];
+                var delay = i * 200;
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="@delay">
+                    <div class="list_box position-relative">
+                        <img src="@item.Icon" alt="@item.Alt" class="img-fluid transition" style="max-height: 150px; max-width: auto;" />
+                        <div class="extra-wrap my-5 transition">
+                            <p class="title transition" style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;">@item.Title</p>
+                            <p>@item.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="d-flex vh-100 align-items-center justify-content-center">
+    <div class="container text-center">
+        <div class="row align-items-start box bg-white p-4 rounded p-4 border border-light shadow-sm" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-md-8">
+                <div class="text-start">
+                    <h1 class="display-4 fw-bold">Elysia</h1>
+                    <p class="text-justify"> At its core is Elysia, a compassionate AI assistant inspired by the Elysian Fields of mythology, symbolizing tranquility and healing. <br /> <br />With features like guided meditations, self-help tools, and access to licensed therapists, Utopneia offers a personalized and supportive experience. Whether you're navigating stress, seeking mindfulness, or simply looking for someone to talk to, Utopneia is here to create your mental utopia—one step at a time. </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="big-icon rounded-circle bg-dark p-2 border border-dark">
+                    <img src="@elysiaIconUrl" alt="Related visual" class="img-fluid rounded-circle">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

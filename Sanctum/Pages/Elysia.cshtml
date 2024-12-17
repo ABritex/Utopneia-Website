@@ -1,0 +1,51 @@
+﻿@page
+@model Sanctum.Pages.ElysiaModel
+@{
+    var elysiaIconUrl = ViewData["ElysiaIconUrl"] as string;
+}
+
+<div class="d-flex vh-100 align-items-center justify-content-center " data-aos="fade-up" data-aos-duration="1500">
+    <div class="rounded p-4 border border-light shadow-sm bg-white me-2 flex-fill" style="max-width: 70%; height: 750px;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center">
+                <div class="bg-dark rounded-circle p-1 me-2">
+                    <img src="@elysiaIconUrl" alt="Logo" style="height: 24px; width: 24px;" />
+                </div>
+                <span style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;">Elysia</span>
+            </div>
+        </div>
+        <div class="d-flex flex-column" style="height: calc(100% - 48px);">
+            <div class="flex-grow-1 overflow-auto chat-messages">
+                <!-- Messages -->
+            </div>
+            <div class="mb-1 input-group">
+                <input type="text" class="form-control message-input" placeholder="Type a message..." id="messageInput" disabled>
+                <button class="send-button" id="sendButton" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="rounded p-4 border border-light shadow-sm bg-white ms-2 flex-grow-1 overflow-auto" style="max-width: 30%; height: 750px;">
+        <div class="d-flex align-items-center mb-3">
+            <div class="elysia-icon bg-dark rounded-circle p-1 me-2">
+                <img src="@elysiaIconUrl" alt="AI" style="height: 34px; width: 34px;" />
+            </div>
+            <span style="font-family: 'Neue', Arial, sans-serif; font-size: 1.5rem;">Elysia AI</span>
+        </div>
+        <div class="info-content">
+            <ul>
+                <li> <b>Ask for Advice</b>: Share your concerns, and Elysia will suggest coping strategies or self-help resources.</li>
+                <hr />
+                <li> <b>Guided Relaxation</b>: Request a calming exercise, and Elysia will guide you through meditations or breathing techniques.</li>
+                <hr />
+                <li> <b>Stress Management</b> Tips: Users can ask for quick ways to manage stress, and Elysia provides practical advice.</li>
+                <hr />
+                <li> <b>Mental Health FAQs</b>: Ask questions about mental health topics, and Elysia will provide clear, helpful answers.</li>
+                <hr />
+                <li> <b>Resource Recommendations</b>: Elysia suggests articles, videos, or exercises based on the user's specific mental health needs.</li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>

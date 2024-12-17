@@ -1,0 +1,40 @@
+﻿@{
+    var homeIconUrl = "/images/icons/home1.png";
+    var elysiaIconUrl = "/images/icons/robot.png";
+    var therapistIconUrl = "/images/icons/rapist.png";
+    var meditationIconUrl = "/images/icons/meditation.png";
+}
+
+<div class="wrapper">
+    <nav class="side-navbar animate-nav">
+        <div class="nav-item @(ViewContext.RouteData.Values["Page"]?.ToString() == "/Index" ? "active" : "")">
+            <a href="@Url.Page("/Index")" data-label="Home">
+                <img src="@homeIconUrl" alt="Home">
+            </a>
+            <span class="tooltip">Home</span>
+            <div class="active-indicator"></div>
+        </div>
+        <div class="nav-item @(ViewContext.RouteData.Values["Page"]?.ToString() == "/Elysia" ? "active" : "")">
+            <a href="@Url.Page("/Elysia")" data-label="Elysia">
+                <img src="@elysiaIconUrl" alt="Elysia">
+            </a>
+            <span class="tooltip">Elysia AI</span>
+            <div class="active-indicator"></div>
+        </div>
+        <div class="nav-item @(ViewContext.RouteData.Values["Page"]?.ToString() == "/Therapist" ? "active" : "")">
+            <a href="@Url.Page("/Therapist")" data-label="Therapist">
+                <img src="@therapistIconUrl" alt="Therapist">
+            </a>
+            <span class="tooltip">Therapist</span>
+            <div class="active-indicator"></div>
+        </div>
+        <div class="nav-item  @(ViewContext.RouteData.Values["Page"]?.ToString() == "/Meditation" ? "active" : "")">
+            <a href="@Url.Page("/Meditation")" data-label="Meditation">
+                <img src="@meditationIconUrl" alt="Meditation">
+            </a>
+            <span class="tooltip">Meditation</span>
+            <div class="active-indicator"></div>
+        </div>
+    </nav>
+    <div class="blur-overlay"></div>
+</div>

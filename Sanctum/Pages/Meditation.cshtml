@@ -1,0 +1,142 @@
+﻿@page
+@model MeditationModel
+@{
+    ViewData["Title"] = "Meditation";
+    var Stress = "images/icons/stress.png";
+    var Focus = "images/icons/focus.png";
+    var Sleep = "images/icons/sleep.png";
+
+}
+<div class="hero-section" data-aos="fade-down" data-aos-duration="1000">
+    <br />
+    <br />
+ 
+    <div class="container" >
+        <h1 class="text-center display-4 mb-4" style="font-family: 'Beba', Arial, sans-serif; font-size: 6rem;">Meditation for Mental Well-Being</h1>
+        <p class="lead text-center" style="font-family: 'Neue', Arial, sans-serif; font-size: 1.6rem">Find your inner peace through mindful meditation practices</p>
+        <div class="breathing-circle"></div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="row mb-5">
+        <h2 class="text-center mb-4" style="font-family: 'Neue', Arial, sans-serif; font-size: 2.8rem;" data-aos="fade-up" data-aos-duration="1000">Benefits of Meditation</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1100">
+                <div class="benefit-card d-flex justify-content-between align-items-start">
+                    <img src="@Stress" alt="Reduce Stress" class="img-fluid" style="max-width: 90px; height: auto; margin-right: 16px;" />
+                    <div>
+                        <h4 style="font-size: 2rem;"><b>Reduce Stress</b></h4>
+                        <p style="font-size: 1.2rem;">Lower anxiety levels and promote emotional well-being through regular practice.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
+                <div class="benefit-card d-flex justify-content-between align-items-start">
+                    <img src="@Focus" alt="Improve Focus" class="img-fluid" style="max-width: 90px; height: auto; margin-right: 16px;" />
+                    <div >
+                        <h4 style="font-size: 2rem;"><b>Improve Focus</b></h4>
+                        <p style="font-size: 1.2rem;">Enhance concentration and mental clarity for better productivity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1300">
+                <div class="benefit-card d-flex justify-content-between align-items-start">
+                    <img src="@Sleep" alt="Better Sleep" class="img-fluid" style="max-width: 90px; height: auto; margin-right: 16px;" />
+                    <div>
+                        <h4 style="font-size: 2rem;"><b>Better Sleep</b></h4>
+                        <p style="font-size: 1.2rem;">Develop healthy sleep patterns and improve sleep quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="mb-5">
+        <h2 class="text-center mb-4" style="font-family: 'Neue', Arial, sans-serif; font-size: 2.5rem;" data-aos="fade-up" data-aos-duration="1000">Getting Started</h2>
+        <div class="meditation-step" data-aos="fade-up" data-aos-duration="1000">
+            <h5><b>1. Find Your Space</b></h5>
+            <p>Choose a quiet, comfortable location where you won't be disturbed.</p>
+        </div>
+        <div class="meditation-step" data-aos="fade-up" data-aos-duration="1000">
+            <h5><b>2. Get Comfortable</b></h5>
+            <p>Sit or lie in a comfortable position with your back straight.</p>
+        </div>
+        <div class="meditation-step" data-aos="fade-up" data-aos-duration="1000">
+            <h5><b>3. Focus on Breath</b></h5>
+            <p>Close your eyes and pay attention to your natural breathing pattern.</p>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <h2 class="text-center mb-4" style="font-family: 'Neue', Arial, sans-serif; font-size: 2.5rem;" data-aos="fade-up" data-aos-duration="1000">Guided Meditations</h2>
+    <div class="row g-4 mb-5">
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+            <div class="resource-card">
+                <div class="card-body" >
+                    <h5 class="card-title"><b>Morning Meditation</b></h5>
+                    <p class="card-text">Start your day with clarity and purpose.</p>
+                    <button class="btn btn-custom">Begin Session</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
+            <div class="resource-card">
+                <div class="card-body">
+                    <h5 class="card-title"><b>Stress Relief</b></h5>
+                    <p class="card-text">Release tension and find inner calm.</p>
+                    <button class="btn btn-custom">Begin Session</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-duration="1400">
+            <div class="resource-card">
+                <div class="card-body">
+                    <h5 class="card-title"><b>Deep Sleep</b></h5>
+                    <p class="card-text">Prepare for restful, rejuvenating sleep.</p>
+                    <button class="btn btn-custom">Begin Session</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />   <br />
+    <br />
+    <br />   <br />
+    <br />
+    <br />   <br />
+    <br />
+    <br />
+    <br />
+    <div class="text-center mt-5">
+        <h3 class="mb-4" style="font-family: 'Neue', Arial, sans-serif; font-size: 5rem;" data-aos="fade-up" data-aos-duration="1000">Ready to Begin Your Journey?</h3>
+        <button class="btn btn-custom btn-lg" style="padding: 1rem 2rem; font-size: 2rem; " data-aos="fade-up" data-aos-duration="1000">Start Meditating Now</button>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />   <br />
+    <br />
+    <br />   <br />
+    <br />
+    <br />   <br />
+    <br />
+    <br />
+    <br />
+</div>

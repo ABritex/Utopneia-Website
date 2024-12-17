@@ -1,0 +1,132 @@
+﻿.chat-messages {
+    animation: fadeIn 1s ease-out;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ededed;
+    border-radius: 5px;
+    position: relative;
+}
+
+.chat-messages .user-message,
+.chat-messages .ai-message,
+.typing-indicator {
+    animation: slideIn 0.5s ease-out;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.chat-messages .user-message {
+    background-color: #d1e5f4;
+}
+
+.chat-messages .ai-message {
+    background-color: #81909c;
+    color: white;
+}
+
+.typing-indicator {
+    position: absolute;
+    bottom: 5px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: #f0f0f0;
+    color: #666;
+    font-style: italic;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 10; 
+    white-space: nowrap; 
+}
+
+/*.typing-indicator {
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: #f0f0f0;
+    color: #666;
+    font-style: italic;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    z-index: 1000; 
+}*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.elysia-icon.rounded-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #343a40;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.send-button {
+    height: 45px;
+    padding: 8px 30px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: default;
+    transition: background-color 0.3s;
+}
+
+.send-button.active {
+    background-color: #007bff;
+    color: white;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
